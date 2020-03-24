@@ -1,0 +1,13 @@
+<h1>Добрый день {{currentUser.firstName}}!</h1>
+
+<a class="btn btn-primary" href="./classification">Классификация</a>
+
+<a class="btn btn-primary" *ngIf="isMetaUser()" href="https://drive.google.com/open?id=1qg0-P6rqB6vXRRWDMhE-RLAssmumxFC5">Google Colab</a>
+
+<br><h4>Все зарегстрированные пользователи</h4>
+<ul>
+    <li *ngFor="let user of users">
+        {{user.username}} ({{user.firstName}} {{user.lastName}})
+        - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
+    </li>
+</ul>
